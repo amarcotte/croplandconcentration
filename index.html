@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Cropland Concentration in America</title>
+    
+    <!--LIBRARIES-->
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    
+    <!--JSON data-->
+	<script src="data/us_all_acres_county.json" type="text/javascript" charset="utf-8"></script>
+    <script src="data/us_corn_acresplanted_county.json" type="text/javascript" charset="utf-8"></script>
+    <script src="data/us_soy_acresplanted_county.json" type="text/javascript" charset="utf-8"></script>
+    <script src="data/us_wheat_acresplanted_county.json" type="text/javascript" charset="utf-8"></script>
+	
+	<!--SCRIPTS TO RUN THE VISUALIZATION-->
+	<script src="js/choropleth.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/slider.js" type="text/javascript" charset="utf-8"></script>
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/jquery-ui-slider.css">
+</head>
+
+
+
+<!--START HTML BODY-->
+<body>
+
+<div class="topnav">
+	<a href="#" id="clicked" alt="Map">Map</a>
+	<a href="about.html" alt="About">About</a>
+    <a href="data.html" alt="Data">Data</a>
+    <a href="poster.html" alt="Poster">Poster</a>
+</div>
+
+<nav>
+    <a href="#" id="us_cropland" class="selected" alt="All">All Cropland</a>
+    <a href="#" id="us_corn_acresplanted" alt="Corn">Corn</a>
+    <a href="#" id="us_wheat_acresplanted" alt="Wheat">Wheat</a>
+    <a href="#" id="us_soy_acresplanted" alt="Soy">Soy</a>
+</nav>
+
+<div class="wrapper">
+    
+    <h1 class="map-heading"><span id="crop-title">All</span> Cropland Concentration in America, <span id="year-title">1997</span></h1>
+    <!--Rollover Information writes to this h2-->
+    <h2 class="map-heading" id="acre-title">Acres per square mile</h2>
+    
+    <!--TA DA! This is my map-->
+    <div id="map-container">
+        <object data="img/USA_Counties-States6.svg" type="image/svg+xml" id="mapSvg" ></object>
+    </div>
+    
+    <!--JQUERY SLIDER-->
+    <div id="year_range"></div>
+    
+    <!--Links for Years-->
+    <div id="yearlist">
+        <!--<a href="#">1945</a>
+        <a href="#">1949</a>
+        <a href="#">1954</a>
+        <a href="#">1959</a>
+        <a href="#">1964</a>
+        <a href="#">1969</a>
+        <a href="#">1974</a>
+        <a href="#">1978</a>
+        <a href="#">1982</a>
+        <a href="#">1987</a>
+        <a href="#">1992</a>
+        <a href="#">1997</a>
+        <a href="#">2002</a>
+        <a href="#">2007</a>-->
+    </div>
+</div>
+
+<!--Attribution for background Photo-->
+<div class="photobyline">
+
+	<p alt="All" class="first">"<a href="http://www.flickr.com/photos/wy_jackrabbit/4710511515/" alt="photo title">Farmland Abstract, Somewhere in Kansas</a>" by <a href="http://www.flickr.com/photos/wy_jackrabbit/" alt="author">Wyoming_Jackrabbit</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/deed.en" alt="CC License">CC BY 2.0</a></p>
+    
+    <p alt="Corn">"<a href="http://www.flickr.com/photos/16502322@N03/4806634131/" alt="photo title">Corn Field</a>" by <a href="http://www.flickr.com/photos/16502322@N03/" alt="author">fishhawk</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/deed.en" alt="CC License">CC BY 2.0</a></p>
+    
+    <p alt="Wheat">"<a href="http://www.flickr.com/photos/49873984@N03/5417132086/" alt="photo title">wheat_01</a>" by <a href="http://www.flickr.com/photos/49873984@N03/" alt="author">NDSU Ag Communication</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/deed.en" alt="CC License">CC BY 2.0</a></p>
+    
+    <p alt="Soy">"<a href="http://www.flickr.com/photos/unitedsoybean/9625074800/" alt="photo title">Soybean Research</a>" by <a href="http://www.flickr.com/photos/unitedsoybean/" alt="author">United Soybean Board</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/deed.en" alt="CC License">CC BY 2.0</a></p>
+    
+</div>
+
+
+</body>
+</html>
